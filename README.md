@@ -1,3 +1,16 @@
+# 課程計畫
+1. 建置React專案、工程目錄解說
+2. BEM DESIGN PATTERN
+3. useState, useReact對應生命週期
+4. Router應用配套Axios
+5. useContext模擬redux
+6. Ant. Design （1） 簡介
+7. Ant. Design (2) 登入頁結合Menu
+8. Code review 6&7
+9. 履歷健檢
+10. 模擬面試
+
+
 # 2024/06/06
 1. 建立工程目錄
 
@@ -30,6 +43,8 @@
 5. JSX
 
 6. 配合ant.design, router, 依照上面做
+
+
 
 # prettier
 1.	printWidth: 設置每行的最大長度，默認是 80。
