@@ -13,27 +13,6 @@
 
 # 2024/06/06
 1. 建立工程目錄
-    src/
-    ├── api
-    ├── assets/
-    │   ├── images
-    │   └── styles/
-    │       └── index.scss
-    ├── components/
-    │   ├── common
-    │   └── Modules
-    ├── constants
-    ├── hooks/
-    │   └── options
-    ├── i18n
-    ├── layout
-    ├── pages/
-    │   ├── Home.jsx
-    │   └── About.jsx
-    ├── router/
-    │   └── index.jsx
-    ├── store
-    └── utils
 2. 是否需要Alias
 3. 是否需要esiint, prettier
 4. SSR(SSR + CSR), SSG, CSR
