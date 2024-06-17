@@ -1,9 +1,9 @@
-import React from 'react';
+import Menu from '@components/Menu';
 
 const Home = () => {
   return (
     <div>
-      <h2>Home Page</h2>
+      <Menu />
     </div>
   );
 };
