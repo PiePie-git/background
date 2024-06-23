@@ -1,14 +1,25 @@
 import loadPage from "@/router/LoadPage";
-import Home from "@/pages/Home";
 
 const routes = [
   {
     path: "",
-    element: <Home />,
+    element: loadPage("Home"),
     children: [
       {
         path: "dashboard",
         element: loadPage("Dashboard"),
+      },
+      {
+        path: "member",
+        element: loadPage("Member"),
+      },
+      {
+        path: "report",
+        element: loadPage("Report"),
+      },
+      {
+        path: "setting",
+        element: loadPage("Setting"),
       },
     ],
   },

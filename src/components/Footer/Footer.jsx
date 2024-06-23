@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FooterList } from "@/contants/conFooter";
+import { FooterList } from "@/constants/conFooter";
 import "./Footer.scss";
 const Footer = () => {
   const [active, setActive] = useState("item1");

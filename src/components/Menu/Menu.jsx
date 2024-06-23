@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MenuItem } from "@/contants/conMenu.jsx";
+import { MenuItem } from "@/constants/conMenu.jsx";
 // import { useHeaderData } from '@/hooks/useMenuData';
 import { useNavigate } from "react-router-dom";
 import "./Menu.scss";
