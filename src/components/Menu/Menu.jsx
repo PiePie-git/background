@@ -1,34 +1,23 @@
-/* eslint-disable */
-import { useState } from 'react';
-import { MenuList } from '@/contatns/conMenu';
+import { useState } from "react";
+import { MenuItem } from "@/contants/conMenu.jsx";
 // import { useHeaderData } from '@/hooks/useMenuData';
-import './Menu.scss';
+import "./Menu.scss";
+import { Menu } from "antd";
 
-const Menu = () => {
-  // const { headerMenuList } = useHeaderData();
-  const [active, setActive] = useState('item1');
-  const toggleItem = (id) => {
-    const newId = id;
-    setActive(newId);
-  };
-  const forMapItem = (item) => {
-    return (
-      <li
-        key={item.id}
-        className={`menu__item ${item.id === active ? 'menu__item--active' : ''}`}
-      >
-        <a className={`menu__link  ${item.id === active ? 'menu__link--active' : ''}`} onClick={() => toggleItem(item.id)}>{item.title}</a>
-      </li>
-    )
-  };
-  const child = MenuList.map(forMapItem);
+const MenuSidebar = () => {
+  const [collapsed] = useState(false);
   return (
-    <section className="menu">
-      <ul className="menu__list">
-        {child}
-      </ul>
-    </section>
+    <div className="menu">
+      <Menu
+        defaultSelectedKeys={["1"]}
+        defaultOpenKeys={["sub1"]}
+        mode="inline"
+        theme="dark"
+        inlineCollapsed={collapsed}
+        items={MenuItem}
+      />
+    </div>
   );
-}
+};
 
-export default Menu
+export default MenuSidebar;

@@ -4,14 +4,14 @@ const useAudio = () => {
   // const j = new xxx(src);
 
   const play = () => {
-    console.log('play video')
-  }
+    console.log("play video");
+  };
   const stop = () => {
-    console.log('stop video')
-  }
+    console.log("stop video");
+  };
   return {
     play: play,
     stop: stop,
-  }
-}
-export { useAudio }
+  };
+};
+export { useAudio };

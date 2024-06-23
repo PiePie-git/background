@@ -11,23 +11,30 @@
     "format": "prettier --write \"src/**/*.{js,jsx,json,css,scss,md}\""
   },
   "dependencies": {
+    "antd": "^5.18.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.5.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.57.0",
+    "eslint": "8.x",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "globals": "^15.6.0",
     "prettier": "^3.3.1",
     "sass": "^1.77.4",
     "vite": "^5.2.0",
     "vite-plugin-eslint": "^1.8.1"
-  }
+  },
+  "description": "1. 建置React專案、工程目錄解說 2. BEM DESIGN PATTERN 3. Router應用配套Axios 4. useState, useReact對應生命週期 5. useContext模擬redux 6. Ant. Design（1） 簡介 7. Ant. Design (2) 登入頁結合Menu 8. Code review 6&7 9. 履歷健檢 10. 模擬面試",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }
