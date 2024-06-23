@@ -27,6 +27,16 @@
 3. constants(放置常量變數) hooks(鉤子函數，會自動重新渲染) util(簡單的小function放這裡)
 4. 後台 router配置, seacrh form, list新刪修
 
+# 2024/06/23
+
+1. constants & util 檔案可小寫，其他大寫
+2. RouteMapping 裡面只 import pages 裡的東西
+3. suspense lazy
+4. hashrouter browsingrouter htccess
+5. login 登入用router帶token到下一頁
+6. 把menu要做的項目先完成，下次上課可以用直接做右下
+7. 把router加上auth
+
 # 目錄架構
 
 - `api/`：存放與後端 API 交互的代碼，比如 API 請求函數和相關的配置文件。(service)
