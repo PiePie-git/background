@@ -1,1 +1,6 @@
-$primary-color: #3498db;
+@import "./Variables.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+}

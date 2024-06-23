@@ -10,36 +10,36 @@
 //   },
 // ];
 
-import { createBrowserRouter, Link } from "react-router-dom";
-import MainLayout from "@/layout/MainLayout";
-import AuthLayout from "@/layout/AuthLayout";
+/* eslint-disable */
+import { Suspense, lazy } from "react";
+import { createBrowserRouter } from "react-router-dom";
+// import MainLayout from "@/layout/MainLayout";
 import Login from "@/pages/Login";
+import Home from "@/pages/Home";
+
+const loadPage = (id) => {
+  const Page = lazy(() => import(`../pages/${id}`));
+  return (
+    <Suspense fallback={`123`}>
+      <Page />
+    </Suspense>
+  );
+};
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <MainLayout />,
+    path: "",
+    element: <Home />,
     children: [
       {
         path: "dashboard",
-        element: (
-          <div>
-            <h1>Hello World</h1>
-            <Link to="about">About Us</Link>
-          </div>
-        ),
+        element: loadPage("Dashboard"),
       },
     ],
   },
   {
     path: "/login",
-    element: <AuthLayout />,
-    children: [
-      {
-        path: "login",
-        element: <Login />,
-      },
-    ],
+    element: <Login />,
   },
 ]);
 

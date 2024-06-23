@@ -1,19 +1,26 @@
 import { useState } from "react";
 import { MenuItem } from "@/contants/conMenu.jsx";
 // import { useHeaderData } from '@/hooks/useMenuData';
+import { useNavigate } from "react-router-dom";
 import "./Menu.scss";
 import { Menu } from "antd";
 
 const MenuSidebar = () => {
-  const [collapsed] = useState(false);
+  const [current, setCurrent] = useState("mail");
+  const navigate = useNavigate();
+  const onClick = (e) => {
+    const { key } = e;
+    setCurrent(key);
+    const targetPath = MenuItem?.find((item) => item.key === key)?.path;
+    navigate(targetPath, { replace: true });
+  };
   return (
     <div className="menu">
       <Menu
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
+        onClick={onClick}
+        selectedKeys={[current]}
         mode="inline"
         theme="dark"
-        inlineCollapsed={collapsed}
         items={MenuItem}
       />
     </div>
