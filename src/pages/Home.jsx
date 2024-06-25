@@ -19,7 +19,7 @@ const App = () => {
         <MenuSidebar />
       </Sider>
       <Layout>
-        <Header>
+        <Header style={{ padding: 0, display: "flex", alignItems: "center" }}>
           <Navbar toggleCollapsed={toggleCollapsed} collapsed={collapsed} />
         </Header>
         <Content>
