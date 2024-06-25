@@ -6,7 +6,7 @@ import "./Menu.scss";
 import { Menu } from "antd";
 
 const MenuSidebar = () => {
-  const [current, setCurrent] = useState("mail");
+  const [current, setCurrent] = useState("dashboard");
   const navigate = useNavigate();
   const onClick = (e) => {
     const { key } = e;
@@ -14,6 +14,7 @@ const MenuSidebar = () => {
     const targetPath = MenuItem?.find((item) => item.key === key)?.path;
     navigate(targetPath, { replace: true });
   };
+
   return (
     <div className="menu">
       <Menu

@@ -1,16 +1,11 @@
-import { useState } from "react";
 import "./Navbar.scss";
 import { Button } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
-const Navbar = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
+const Navbar = ({ toggleCollapsed, collapsed }) => {
   return (
     <div className="navbar">
-      <Button type="primary" onClick={toggleCollapsed}>
+      <Button type="text" onClick={toggleCollapsed}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </Button>
     </div>

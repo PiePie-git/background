@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import MenuSidebar from "@/components/Menu";
 import { Layout } from "antd";
@@ -6,33 +7,24 @@ import { Outlet } from "react-router-dom";
 const { Header, Content, Sider } = Layout;
 
 const App = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
     <Layout>
-      <Header
-        style={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Navbar />
-      </Header>
+      <Sider trigger={null} collapsible collapsed={collapsed}>
+        <MenuSidebar />
+      </Sider>
       <Layout>
-        <Sider width={200}>
-          <MenuSidebar />
-        </Sider>
-        <Layout>
-          <Content
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-              // background: colorBgContainer,
-              // borderRadius: borderRadiusLG,
-            }}
-          >
-            <Outlet />
-          </Content>
-        </Layout>
+        <Header>
+          <Navbar toggleCollapsed={toggleCollapsed} collapsed={collapsed} />
+        </Header>
+        <Content>
+          <Outlet />
+        </Content>
       </Layout>
     </Layout>
   );
