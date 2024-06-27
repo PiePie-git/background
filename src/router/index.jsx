@@ -1,6 +1,2 @@
-import { createBrowserRouter } from "react-router-dom";
-import routes from "@/router/RoutesMapping";
-
-const router = createBrowserRouter(routes);
-
+import router from "@/router/RouterAuth";
 export default router;
