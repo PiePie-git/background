@@ -24,13 +24,15 @@ const RenderRouter = ({ routes }) => {
   return element;
 };
 
-const RouterAuth = (props) => {
+const RouterAuth = () => {
   const location = useLocation();
   const routerPathList = mapRouterPath(RouterList);
   const targetRouter = routerPathList.find((item) => item.path === location.pathname);
   const needLogin = targetRouter?.needLogin;
-  const userInfo = props.userInfo ? props.userInfo : "";
-  const token = userInfo ? userInfo.token : false;
+  const userInfo = localStorage.getItem("userInfo")
+    ? JSON.parse(localStorage.getItem("userInfo"))
+    : null;
+  const token = userInfo ? userInfo.state.token : false;
   if (!token && needLogin && location.pathname !== "/login")
     return <Navigate to="/login" state={{ status: "needLogin" }} />;
   else return <RenderRouter routes={RouterList} />;

@@ -7,18 +7,20 @@ import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  // const [userInfo, setUserInfo] = useState(null);
   const navigate = useNavigate();
 
   const onFinish = (values) => {
     console.log("收到帳密", values);
-    console.log(
-      "假設登入成功，api回傳token：",
-      "ey3p98urtgoihblkj8pyrowihf2345yerthdgfytguk4erfssdp79wyeirflugkhy8ilu",
-    );
-    console.log("跳轉至登入頁");
-    navigate("/dashboard", {
-      state: { token: "ey3p98urtgoihblkj8pyrowihf2345yerthdgfytguk4erfssdp79wyeirflugkhy8ilu" },
-    });
+    const userInfo = {
+      state: {
+        id: "1",
+        name: "piepie",
+        token: "ey3p98urtgoihblkj8pyrowihf2345yerthdgfytguk4erfssdp79wyeirflugkhy8ilu",
+      },
+    };
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    navigate("/dashboard", userInfo);
   };
 
   const handleKeyDown = (e) => {
