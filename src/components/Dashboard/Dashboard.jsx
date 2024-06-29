@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 const Dashboard = () => {
   const location = useLocation();
-  const { token } = location.state || {};
+  const { token } = location.state;
   console.log(token);
   return (
     <div>
