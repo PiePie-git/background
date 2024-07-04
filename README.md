@@ -37,6 +37,12 @@
 6. 把menu要做的項目先完成，下次上課可以用直接做右下
 7. 把router加上auth
 
+# 2024/06/29
+
+1. useState, useEffect, useMemo, useCallback
+2. useReducer, flux design pattern, vuex redux jotai
+3. search form, list, i18n
+
 # 目錄架構
 
 - `api/`：存放與後端 API 交互的代碼，比如 API 請求函數和相關的配置文件。(service)

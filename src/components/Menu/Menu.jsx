@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { MenuItem } from "@/constants/conMenu.jsx";
-// import { useHeaderData } from '@/hooks/useMenuData';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Menu.scss";
 import { Menu } from "antd";
 
 const MenuSidebar = () => {
-  const [current, setCurrent] = useState("dashboard");
+  const useCurrentPath = () => {
+    const location = useLocation();
+    return location.pathname.substring(1);
+  };
+
+  const [current, setCurrent] = useState(useCurrentPath());
   const navigate = useNavigate();
   const onClick = (e) => {
     const { key } = e;
