@@ -1,10 +1,15 @@
 import { Suspense, lazy } from "react";
 
+const pages = import.meta.glob("../pages/*.jsx");
+
 const loadPage = (id) => {
-  const Page = lazy(() => import(/* @vite-ignore */ `../pages/${id}`));
+  const PageComponent = lazy(pages[`../pages/${id}.jsx`]);
+  if (!PageComponent) {
+    return <div>Page not found</div>;
+  }
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Page />
+      <PageComponent />
     </Suspense>
   );
 };

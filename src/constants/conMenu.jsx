@@ -3,6 +3,7 @@ import {
   UserOutlined,
   PieChartOutlined,
   SettingOutlined,
+  ShopOutlined,
 } from "@ant-design/icons";
 
 const MenuItem = [
@@ -17,6 +18,12 @@ const MenuItem = [
     icon: <UserOutlined />,
     label: "Member",
     path: "/member",
+  },
+  {
+    key: "product",
+    icon: <ShopOutlined />,
+    label: "Product",
+    path: "/product",
   },
   {
     key: "report",

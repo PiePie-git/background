@@ -16,6 +16,11 @@ const RouterList = [
         needLogin: true,
       },
       {
+        path: "product",
+        element: loadPage("Product"),
+        needLogin: true,
+      },
+      {
         path: "report",
         element: loadPage("Report"),
         needLogin: true,

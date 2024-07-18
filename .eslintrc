@@ -28,6 +28,7 @@
     "rules": {
         "prettier/prettier": ["error", { "singleQuote": false }],
         "react/react-in-jsx-scope": "off",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "react-hooks/exhaustive-deps": "off"
     }
   }

@@ -1,0 +1,11 @@
+.product {
+  &__content {
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  &__search {
+    max-width: 400px;
+  }
+}

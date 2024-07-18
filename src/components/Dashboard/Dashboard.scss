@@ -1,0 +1,18 @@
+.dashboard {
+  &__content {
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  &__title {
+    margin-bottom: 1em;
+    font-weight: 600;
+    font-size: large;
+  }
+  &__value {
+    font-weight: 600;
+    font-size: x-large;
+    line-height: normal;
+  }
+}
