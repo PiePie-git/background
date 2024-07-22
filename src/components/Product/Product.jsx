@@ -1,11 +1,14 @@
 import "./Product.scss";
 import productColumns from "@/constants/conProductColumns";
 import productList from "@/constants/conProductList";
-import { Table, Card, Space, Input, Button, Flex, Dropdown } from "antd";
+import { Table, Card, Space, Input, Flex, Dropdown, Modal } from "antd";
 import { PlusOutlined, DownOutlined, ImportOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
 const { Search } = Input;
 
 const Product = () => {
+  const [openProductForm, setOpenProductForm] = useState(false);
+
   const rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
       console.log(`selectedRowKeys: ${selectedRowKeys}`, "selectedRows: ", selectedRows);
@@ -22,8 +25,12 @@ const Product = () => {
     ],
   };
 
-  const handleDropdownClick = (e) => {
-    console.log("click", e);
+  const showProductForm = () => {
+    setOpenProductForm(true);
+  };
+
+  const onSearch = (value) => {
+    console.log(value);
   };
 
   return (
@@ -35,13 +42,14 @@ const Product = () => {
               className="product__search"
               placeholder="To search for a product by name or code."
               allowClear
+              onSearch={onSearch}
             ></Search>
             <Space size="middle">
-              <Button>Import</Button>
+              {/* <Button>Import</Button> */}
               <Dropdown.Button
                 icon={<DownOutlined />}
                 menu={dropdownMenu}
-                onClick={handleDropdownClick}
+                onClick={showProductForm}
               >
                 <PlusOutlined />
                 Add
@@ -60,6 +68,7 @@ const Product = () => {
           />
         </Card>
       </div>
+      <Modal open={openProductForm} title="Title"></Modal>
     </>
   );
 };
